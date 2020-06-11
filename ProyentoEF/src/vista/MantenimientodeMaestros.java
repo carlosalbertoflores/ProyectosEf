@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author leone
+ * @author carlos
  */
 public class MantenimientodeMaestros extends javax.swing.JInternalFrame {
 

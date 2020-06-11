@@ -8,7 +8,7 @@ import java.sql.*;
 import javax.swing.JOptionPane;
 /**
  *
- * @author familia Sipaque
+ * @author carlos
  */
 public class sedes extends javax.swing.JInternalFrame {
 

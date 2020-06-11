@@ -9,7 +9,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author familia Sipaque
+ * @author carlos
  */
 public class Secciones extends javax.swing.JInternalFrame {
 
@@ -50,7 +50,7 @@ public class Secciones extends javax.swing.JInternalFrame {
         setMaximizable(true);
         setVisible(true);
 
-        panel1.setBackground(new java.awt.Color(51, 51, 51));
+        panel1.setBackground(new java.awt.Color(0, 102, 255));
 
         jButton6.setText("Eliminar");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
@@ -145,7 +145,7 @@ public class Secciones extends javax.swing.JInternalFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jButton2))
                             .addComponent(label_status, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(108, Short.MAX_VALUE))
+                .addContainerGap(105, Short.MAX_VALUE))
         );
         panel1Layout.setVerticalGroup(
             panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -197,7 +197,7 @@ public class Secciones extends javax.swing.JInternalFrame {
        // Funcion donde se elimanar cualquier registro del contenedor
 
         try {
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/umg4", "root", "");
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/proyectoEF", "root", "");
             PreparedStatement pst = cn.prepareStatement("delete from secciones where ID = ?");
 
             pst.setString(1, txt_buscar.getText().trim());
@@ -217,7 +217,7 @@ public class Secciones extends javax.swing.JInternalFrame {
         //Funcion de donde se busca los registros y buscar si esta registrado o no
         try {
             Connection cn;
-            cn = DriverManager.getConnection("jdbc:mysql://localhost/umg4", "root", "");
+            cn = DriverManager.getConnection("jdbc:mysql://localhost/proyectoEF", "root", "");
             PreparedStatement pst = cn.prepareStatement("select * from secciones where ID = ?");
             pst.setString(1, txt_buscar.getText().trim());
             ResultSet rs = pst.executeQuery();
@@ -242,7 +242,7 @@ public class Secciones extends javax.swing.JInternalFrame {
         try {
             String ID = txt_buscar.getText().trim();
 
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/umg4", "root", "");
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/proyectoEF", "root", "");
             PreparedStatement pst = cn.prepareStatement("update secciones set codigo_secciones = ?, nombre_secciones = ?, estatus_secciones = ?  where ID = " + ID);
 
             pst.setString(1, txt_1.getText().trim());
@@ -261,7 +261,7 @@ public class Secciones extends javax.swing.JInternalFrame {
         // se registran todo los nuevos manteniminetos de secciones
         try {
 
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/umg4", "root", "");
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/proyectoEF", "root", "");
             PreparedStatement pst = cn.prepareStatement("insert into secciones values(?,?,?,?)");
 
             pst.setString(1, "0");
