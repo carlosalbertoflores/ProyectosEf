@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
+package vista;
 
 import modelo.Usuarios;
 
@@ -15,8 +15,10 @@ private ManFacultades NuevaVentana11;
 private ManCarreras2 NuevaVentana10;
 private MantenimientodeMaestros NuevaVentana8;
 private AsignaciondeCursosMaestros NuevaVentana9;
-    Usuarios mod;
-
+  
+  
+Usuarios mod;
+ private asignacion winMnuProcesosasignacion;
     public menu() {
         initComponents();
     }
@@ -43,7 +45,6 @@ private AsignaciondeCursosMaestros NuevaVentana9;
         jMenuItem3 = new javax.swing.JMenuItem();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jDesktopPane1 = new javax.swing.JDesktopPane();
-        jLabel2 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         menuProductos = new javax.swing.JMenu();
         subMenuAddProducto = new javax.swing.JMenuItem();
@@ -62,6 +63,10 @@ private AsignaciondeCursosMaestros NuevaVentana9;
         menuProveedores2 = new javax.swing.JMenu();
         subMenuAddProvedor2 = new javax.swing.JMenuItem();
         jMenuItem5 = new javax.swing.JMenuItem();
+        mnuProcesos = new javax.swing.JMenu();
+        mnuProcesosAsignacionAlumnos = new javax.swing.JMenuItem();
+        mnuProcesos1 = new javax.swing.JMenu();
+        mnuProcesosAsignacionAlumnos1 = new javax.swing.JMenuItem();
 
         jMenuItem3.setText("jMenuItem3");
 
@@ -71,14 +76,12 @@ private AsignaciondeCursosMaestros NuevaVentana9;
         jDesktopPane1.setLayout(jDesktopPane1Layout);
         jDesktopPane1Layout.setHorizontalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 4, Short.MAX_VALUE)
+            .addGap(0, 801, Short.MAX_VALUE)
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 543, Short.MAX_VALUE)
         );
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/fondo.PNG"))); // NOI18N
 
         menuProductos.setText("Informacion");
 
@@ -123,6 +126,11 @@ private AsignaciondeCursosMaestros NuevaVentana9;
         menuProveedores.setText("Info Alumnos");
 
         subMenuAddProvedor.setText("Asignacion de alumnos");
+        subMenuAddProvedor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                subMenuAddProvedorActionPerformed(evt);
+            }
+        });
         menuProveedores.add(subMenuAddProvedor);
 
         jMenuItem2.setText("Alumnos");
@@ -166,7 +174,41 @@ private AsignaciondeCursosMaestros NuevaVentana9;
         });
         menuProveedores2.add(jMenuItem5);
 
+        mnuProcesos.setText("Procesos");
+        mnuProcesos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuProcesosActionPerformed(evt);
+            }
+        });
+
+        mnuProcesosAsignacionAlumnos.setText("Asignación Alumnos");
+        mnuProcesosAsignacionAlumnos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuProcesosAsignacionAlumnosActionPerformed(evt);
+            }
+        });
+        mnuProcesos.add(mnuProcesosAsignacionAlumnos);
+
+        menuProveedores2.add(mnuProcesos);
+
         jMenuBar1.add(menuProveedores2);
+
+        mnuProcesos1.setText("Procesos");
+        mnuProcesos1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuProcesos1ActionPerformed(evt);
+            }
+        });
+
+        mnuProcesosAsignacionAlumnos1.setText("Asignación Alumnos");
+        mnuProcesosAsignacionAlumnos1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuProcesosAsignacionAlumnos1ActionPerformed(evt);
+            }
+        });
+        mnuProcesos1.add(mnuProcesosAsignacionAlumnos1);
+
+        jMenuBar1.add(mnuProcesos1);
 
         setJMenuBar(jMenuBar1);
 
@@ -176,15 +218,11 @@ private AsignaciondeCursosMaestros NuevaVentana9;
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 863, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jDesktopPane1)
-                .addContainerGap())
+                .addComponent(jDesktopPane1))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jDesktopPane1)
-            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -228,6 +266,38 @@ jDesktopPane1.add(NuevaVentana10);
         jDesktopPane1.add(NuevaVentana9);
     }//GEN-LAST:event_subMenuAddProvedor1ActionPerformed
 
+    private void subMenuAddProvedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_subMenuAddProvedorActionPerformed
+ 
+
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_subMenuAddProvedorActionPerformed
+
+    private void mnuProcesosAsignacionAlumnosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuProcesosAsignacionAlumnosActionPerformed
+        // TODO add your handling code here:
+     
+    }//GEN-LAST:event_mnuProcesosAsignacionAlumnosActionPerformed
+
+    private void mnuProcesosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuProcesosActionPerformed
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_mnuProcesosActionPerformed
+
+    private void mnuProcesosAsignacionAlumnos1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuProcesosAsignacionAlumnos1ActionPerformed
+        // TODO add your handling code here:
+     asignacion frm = new asignacion();
+         frm.setVisible(true);
+         this.setVisible(true);
+
+  
+    }//GEN-LAST:event_mnuProcesosAsignacionAlumnos1ActionPerformed
+
+    private void mnuProcesos1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuProcesos1ActionPerformed
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_mnuProcesos1ActionPerformed
+
+ 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -251,7 +321,6 @@ jDesktopPane1.add(NuevaVentana10);
             java.util.logging.Logger.getLogger(menu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -263,7 +332,6 @@ jDesktopPane1.add(NuevaVentana10);
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane jDesktopPane1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
@@ -279,10 +347,18 @@ jDesktopPane1.add(NuevaVentana10);
     private javax.swing.JMenu menuProveedores;
     private javax.swing.JMenu menuProveedores1;
     private javax.swing.JMenu menuProveedores2;
+    private javax.swing.JMenu mnuProcesos;
+    private javax.swing.JMenu mnuProcesos1;
+    private javax.swing.JMenuItem mnuProcesosAsignacionAlumnos;
+    private javax.swing.JMenuItem mnuProcesosAsignacionAlumnos1;
     private javax.swing.JMenuItem subMenuAddProducto;
     private javax.swing.JMenuItem subMenuAddProvedor;
     private javax.swing.JMenuItem subMenuAddProvedor1;
     private javax.swing.JMenuItem subMenuAddProvedor2;
     private javax.swing.JMenuItem subMenuEditProducto;
     // End of variables declaration//GEN-END:variables
+
+ 
+
+   
 }
