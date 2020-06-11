@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author MoisesA
+ * @author carlos
  */
 public class ManFacultades extends javax.swing.JInternalFrame {
 
@@ -187,7 +187,7 @@ public class ManFacultades extends javax.swing.JInternalFrame {
 
     private void btAlta2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAlta2ActionPerformed
  try{
-             Connection cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/facultades", "root", "");
+             Connection cn = DriverManager.getConnection("jdbc:mysql://localhost:3306/proyectoEF", "root", "");
             PreparedStatement pst = cn.prepareStatement("insert into facultad values(?,?,?)");
             
             pst.setString(1, "0");
@@ -209,7 +209,7 @@ try {
             
  
 
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/facultades", "root", "");
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/proyectoEF", "root", "");
             PreparedStatement pst = cn.prepareStatement("update facultad set nombre_facultad = ?, estado_facultad = ? where id_facultad = " + ID);
             
             pst.setString(1, txtNomFacu.getText().trim());
@@ -230,7 +230,7 @@ try {
       try {
 
 
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/facultades", "root", "");
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/proyectoEF", "root", "");
             PreparedStatement pst = cn.prepareStatement("delete from facultad where id_facultad = ?");
             
             pst.setString(1, Txtbusqueda.getText().trim());
@@ -250,7 +250,7 @@ try {
   try{
            
 
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/facultades", "root", "");
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/proyectoEF", "root", "");
             PreparedStatement pst = cn.prepareStatement("select * from facultad where id_facultad = ?");
             pst.setString(1, Txtbusqueda.getText().trim());
             

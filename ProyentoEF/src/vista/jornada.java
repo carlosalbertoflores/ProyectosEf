@@ -9,7 +9,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author familia Sipaque
+ * @author carlos
  */
 public class jornada extends javax.swing.JInternalFrame {
 
@@ -50,7 +50,7 @@ public class jornada extends javax.swing.JInternalFrame {
         setMaximizable(true);
         setVisible(true);
 
-        panel1.setBackground(new java.awt.Color(51, 51, 51));
+        panel1.setBackground(new java.awt.Color(0, 102, 255));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -206,7 +206,7 @@ public class jornada extends javax.swing.JInternalFrame {
         try {
             String ID = txt_buscar.getText().trim();
 
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/umg4", "root", "");
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/proyectoEF", "root", "");
             PreparedStatement pst = cn.prepareStatement("update jornada set codigo_jornada = ?, nombre_jornada = ?, estatus_jornada = ?  where ID = " + ID);
 
             pst.setString(1, txt_1.getText().trim());
@@ -225,7 +225,7 @@ public class jornada extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
 
         try {
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/umg4", "root", "");
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/proyectoEF", "root", "");
             PreparedStatement pst = cn.prepareStatement("delete from jornada where ID = ?");
 
             pst.setString(1, txt_buscar.getText().trim());
@@ -245,7 +245,7 @@ public class jornada extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         try {
             Connection cn;
-            cn = DriverManager.getConnection("jdbc:mysql://localhost/umg4", "root", "");
+            cn = DriverManager.getConnection("jdbc:mysql://localhost/proyectoEF", "root", "");
             PreparedStatement pst = cn.prepareStatement("select * from jornada where ID = ?");
             pst.setString(1, txt_buscar.getText().trim());
             ResultSet rs = pst.executeQuery();
@@ -269,7 +269,7 @@ public class jornada extends javax.swing.JInternalFrame {
         // se registran todo los empleados
         try {
 
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/umg4", "root", "");
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/proyectoEF", "root", "");
             PreparedStatement pst = cn.prepareStatement("insert into jornada values(?,?,?,?)");
 
             pst.setString(1, "0");

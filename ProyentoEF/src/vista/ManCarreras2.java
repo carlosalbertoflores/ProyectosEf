@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author diego
+ * @author carlos
  */
 public class ManCarreras2 extends javax.swing.JInternalFrame {
 

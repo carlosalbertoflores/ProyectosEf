@@ -304,7 +304,52 @@ public class asignacion extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+public void Tabla() {
+        try {
 
+            Connection cn = DriverManager.getConnection(BD, Usuario, Clave);
+
+            PreparedStatement ps = cn.prepareStatement("select * from asignacioncursosalumnos;");
+            PreparedStatement ps2 = cn.prepareStatement("select * from asignacioncursosalumnos;");
+            //pstt4.setString(1, txt_buscar.getText().trim());
+
+            ResultSet rs = ps.executeQuery();
+
+            ResultSet rss = ps2.executeQuery();
+
+            if (rs.next()) {
+
+                DefaultTableModel modelo = new DefaultTableModel();
+
+                modelo.addColumn("codigo_carrera");
+                modelo.addColumn("codigo_sede");
+                modelo.addColumn("codigo_jornada");
+                modelo.addColumn("codigo_seccion");
+                modelo.addColumn("codigo_aula");
+                modelo.addColumn("codigo_curso");
+                modelo.addColumn("carnet_alumno");
+
+                tbl_asignacion.setModel(modelo);
+
+                String[] dato = new String[7];
+
+                while (rss.next()) {
+                    dato[0] = rss.getString(1);
+                    dato[1] = rss.getString(2);
+                    dato[2] = rss.getString(3);
+                    dato[3] = rss.getString(4);
+                    dato[4] = rss.getString(5);
+                    dato[5] = rss.getString(6);
+                    dato[6] = rss.getString(7);
+
+                    modelo.addRow(dato);
+                }
+            }
+
+        } catch (Exception e) {
+
+        }
+    }
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         //Codigo que permite consultar registros en la base de datos
         try {
@@ -357,52 +402,8 @@ public class asignacion extends javax.swing.JFrame {
 
         }
     }//GEN-LAST:event_jButton4ActionPerformed
-  public void Tabla() {
-        try {
 
-            Connection cn = DriverManager.getConnection(BD, Usuario, Clave);
-
-            PreparedStatement ps = cn.prepareStatement("select * from asignacioncursosalumnos;");
-            PreparedStatement ps2 = cn.prepareStatement("select * from asignacioncursosalumnos;");
-            //pstt4.setString(1, txt_buscar.getText().trim());
-
-            ResultSet rs = ps.executeQuery();
-
-            ResultSet rss = ps2.executeQuery();
-
-            if (rs.next()) {
-
-                DefaultTableModel modelo = new DefaultTableModel();
-
-                modelo.addColumn("codigo_carrera");
-                modelo.addColumn("codigo_sede");
-                modelo.addColumn("codigo_jornada");
-                modelo.addColumn("codigo_seccion");
-                modelo.addColumn("codigo_aula");
-                modelo.addColumn("codigo_curso");
-                modelo.addColumn("carnet_alumno");
-
-                tbl_asignacion.setModel(modelo);
-
-                String[] dato = new String[7];
-
-                while (rss.next()) {
-                    dato[0] = rss.getString(1);
-                    dato[1] = rss.getString(2);
-                    dato[2] = rss.getString(3);
-                    dato[3] = rss.getString(4);
-                    dato[4] = rss.getString(5);
-                    dato[5] = rss.getString(6);
-                    dato[6] = rss.getString(7);
-
-                    modelo.addRow(dato);
-                }
-            }
-
-        } catch (Exception e) {
-
-        }
-    }
+   
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         //Codigo que permite insertar registros en al base de datos
         try {
@@ -716,7 +717,7 @@ public class asignacion extends javax.swing.JFrame {
     }//GEN-LAST:event_tbl_asignacionMouseClicked
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
+     
         Tabla();
     }//GEN-LAST:event_jButton5ActionPerformed
 

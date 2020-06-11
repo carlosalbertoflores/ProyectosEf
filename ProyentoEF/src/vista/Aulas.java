@@ -8,7 +8,7 @@ import java.sql.*;
 import javax.swing.JOptionPane;
 /**
  *
- * @author familia Sipaque
+ * @author carlos
  */
 public class Aulas extends javax.swing.JInternalFrame {
 
@@ -49,7 +49,7 @@ public class Aulas extends javax.swing.JInternalFrame {
         setMaximizable(true);
         setVisible(true);
 
-        panel1.setBackground(new java.awt.Color(51, 51, 51));
+        panel1.setBackground(new java.awt.Color(51, 51, 255));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -199,7 +199,7 @@ public class Aulas extends javax.swing.JInternalFrame {
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // Funcion donde se elimanar cualquier registro del contenedor
         try {
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/umg4", "root", "");
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/proyectoEF", "root", "");
             PreparedStatement pst = cn.prepareStatement("delete from aulas where ID = ?");
 
             pst.setString(1, txt_buscar.getText().trim());
@@ -221,7 +221,7 @@ public class Aulas extends javax.swing.JInternalFrame {
         // se registran todo los nuevos manteniminetos de aulas
 try {
 
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/um4", "root", "");
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/proyectoEF", "root", "");
             PreparedStatement pst = cn.prepareStatement("insert into aulas values(?,?,?,?)");
 
             pst.setString(1, "0");
@@ -245,7 +245,7 @@ try {
         // Funcion de donde se busca los registros y buscar si esta registrado o no
         try {
             Connection cn;
-            cn = DriverManager.getConnection("jdbc:mysql://localhost/umg4", "root", "");
+            cn = DriverManager.getConnection("jdbc:mysql://localhost/proyectoEF", "root", "");
             PreparedStatement pst = cn.prepareStatement("select * from aulas where ID = ?");
             pst.setString(1, txt_buscar.getText().trim());
             ResultSet rs = pst.executeQuery();
@@ -270,7 +270,7 @@ try {
         try {
             String ID = txt_buscar.getText().trim();
 
-            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/umg4", "root", "");
+            Connection cn = DriverManager.getConnection("jdbc:mysql://localhost/proyectoEF", "root", "");
             PreparedStatement pst = cn.prepareStatement("update aulas set codigo_aulas = ?, nombre_aulas = ?, estatus_aulas = ?  where ID = " + ID);
 
             pst.setString(1, txt_1.getText().trim());

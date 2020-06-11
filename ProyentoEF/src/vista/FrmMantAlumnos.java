@@ -13,7 +13,7 @@ import modelo.SQLAlumnos;
 
 /**
  *
- * @author diego
+ * @author carlos
  */
 public class FrmMantAlumnos extends javax.swing.JInternalFrame {
 
@@ -66,7 +66,7 @@ public class FrmMantAlumnos extends javax.swing.JInternalFrame {
         setResizable(true);
         setTitle("Mantenimiento Alumnos");
 
-        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel1.setBackground(new java.awt.Color(0, 102, 255));
 
         jPanel2.setBackground(new java.awt.Color(70, 70, 70));
 
@@ -74,7 +74,7 @@ public class FrmMantAlumnos extends javax.swing.JInternalFrame {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Alumnos");
 
-        jPanel3.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel3.setBackground(new java.awt.Color(0, 102, 255));
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Información Alumno", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Calibri", 0, 14), new java.awt.Color(255, 255, 255))); // NOI18N
 
         jLabel2.setFont(new java.awt.Font("Calibri", 0, 13)); // NOI18N
@@ -290,7 +290,7 @@ public class FrmMantAlumnos extends javax.swing.JInternalFrame {
                             .addComponent(BtnCrear)
                             .addComponent(BtnEliminar)
                             .addComponent(BtnModificar))))
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -341,7 +341,7 @@ public class FrmMantAlumnos extends javax.swing.JInternalFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
